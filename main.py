@@ -4,10 +4,9 @@ app = QApplication([])
 
 
 window = QWidget()
-window.resize(800, 600)
+window.resize(450, 600)
 
 main_line = QVBoxLayout()
-
 
 h1 = QHBoxLayout()
 h2 = QHBoxLayout()
@@ -17,8 +16,9 @@ h5 = QHBoxLayout()
 h6 = QHBoxLayout()
 h7 = QHBoxLayout()
 
-onevalyta_btn = QPushButton("UAH")
-twovalyta_btn = QPushButton("USD")
+persha_valuta = QComboBox()
+druga_valuta = QComboBox()
+
 deletvse_btn = QPushButton("C")
 delet_btn = QPushButton("<-")
 swipe_btn = QPushButton("^")
@@ -40,11 +40,23 @@ zero_btn = QPushButton("0")
 koma_btn = QPushButton(",")
 vidcotok_btn = QPushButton("%")
 
+polevalut = QLineEdit()
+persha_valuta_lbl = QLabel("перша валюта")
+druga_valuta_lbl = QLabel("друга валюта")
+
+polevalut2 = QLineEdit()
+
 main_line.addLayout(h1)
-h1.addWidget(onevalyta_btn)
+h1.addWidget(persha_valuta_lbl)
+h1.addWidget(persha_valuta)
+main_line.addWidget(polevalut)
+persha_valuta.addItems(["USD ", "UAH","EUR","PLN","CNY", "GBP", "CAD" ])
 
 main_line.addLayout(h2)
-h2.addWidget(twovalyta_btn)
+h2.addWidget(druga_valuta_lbl)
+h2.addWidget(druga_valuta)
+main_line.addWidget(polevalut2)
+druga_valuta.addItems(["USD ", "UAH","EUR","PLN","CNY", "GBP", "CAD" ])
 
 main_line.addLayout(h3)
 h3.addWidget(deletvse_btn)
@@ -56,7 +68,7 @@ main_line.addLayout(h4)
 h4.addWidget(one_btn)
 h4.addWidget(two_btn)
 h4.addWidget(three_btn)
-h4.addWidget(dilutu_btn)
+h4.addWidget(mnoshutu_btn)
 
 main_line.addLayout(h5)
 h5.addWidget(four_btn)
@@ -75,8 +87,6 @@ h7.addWidget(zero_btn)
 h7.addWidget(koma_btn)
 h7.addWidget(vidcotok_btn)
 h7.addWidget(dorivnye_btn)
-
-
 
 window.setLayout(main_line)
 
